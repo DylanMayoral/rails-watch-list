@@ -1,0 +1,10 @@
+<%= render 'layouts/banner', banner_title: @list.name, banner_subtitle: "Add a new movie to #{@list.name}" %>
+
+
+<div class="container w-50 mt-4">
+<%= simple_form_for [@list, @bookmark] do |f|  %>
+<%= f.input :comment %>
+<%= f.association :movie %>
+<%= f.submit class: "btn btn-info"%>
+<% end %>
+</div>

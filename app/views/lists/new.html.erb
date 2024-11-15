@@ -1,0 +1,8 @@
+<%= render 'layouts/banner', banner_title: "Add a new list!", banner_subtitle: "Please fill out the form below" %>
+
+<div class="container w-50 mt-4">
+<%= simple_form_for @list do |f|%>
+<%= f.input :name %>
+<%= f.submit class: "btn btn-primary"%>
+<% end %>
+</div>

@@ -1,0 +1,24 @@
+
+<%= render 'layouts/banner', banner_title: "All Movie Lists", banner_subtitle: "Explore our collection of lists" %>
+
+
+<div class="container my-3 px-0 ">
+  <div class="row justify-content-between m-1">
+      <%= link_to new_list_path, class: "text-decoration-none text-dark col-3 bg-primary text-center" do %>
+    <div class="btn btn-primary">Add a new list</div>
+    <% end %>
+  </div>
+
+
+
+  <!-- Row for lists with controlled gutters -->
+  <div class="row row-cols-3 gx-3 gy-3 my-3 text-center">
+    <% @lists.each do |list| %>
+      <div class="col">
+        <%= link_to list_path(list), class: "text-decoration-none text-light" do %>
+        <div class="p-3 bg-info"><%= list.name %></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
